@@ -1,0 +1,191 @@
+settings =
+{
+	orientation =
+	{
+		default = "landscapeRight",
+		supported = { "landscapeLeft", "landscapeRight" },
+	},
+
+	plugins =
+	{
+		-- Google play
+		["plugin.google.play.services"] =
+		{
+			publisherId = "com.coronalabs",
+			supportedPlatforms = { iphone = true, android = true, ["android-nook"] = true, ["android-kindle"] = true },
+		},
+		-- Social share
+		["CoronaProvider.native.popup.social"] =
+		{
+			publisherId = "com.coronalabs",
+		},
+		-- Cipher encript
+		["plugin.openssl"] =
+		{
+			publisherId = "com.coronalabs",
+			supportedPlatforms = { android = true, iphone = true, osx = true, win32 = true },
+		},
+		-- Vibration
+		["plugin.vibrator"] =
+		{
+			publisherId = "com.spiralcodestudio",
+		},
+		-- Game Analytics
+		["plugin.gameanalytics"] =
+		{
+			publisherId = "com.gameanalytics",
+		},
+		-- Advertising / AdMob
+		["plugin.advertisingId"] =
+		{
+			publisherId = "com.coronalabs",
+		},
+		-- Google Play
+		["CoronaProvider.gameNetwork.google"] =
+		{
+			publisherId = "com.coronalabs",
+			supportedPlatforms = { android=true },
+		},
+		-- E-mail
+		["CoronaProvider.native.popup.activity"] =
+		{
+			publisherId = "com.coronalabs",
+			supportedPlatforms = { iphone=true, },
+		},
+	},
+
+	build =
+	{
+		neverStripDebugInfo = true,
+	},
+
+	android =
+	{
+		--versionCode = "2",
+		--usesExpansionFile = true,
+		usesPermissions =
+		{
+			"com.android.vending.CHECK_LICENSE",
+			"android.permission.INTERNET",
+			"android.permission.ACCESS_NETWORK_STATE",
+			"android.permission.VIBRATE",
+			--"android.permission.WRITE_EXTERNAL_STORAGE",
+		},
+		minSdkVersion = "10",
+		googlePlayGamesAppId = "1066278682875",  --long App ID number (use yours!)
+	},
+
+	iphone =
+	{
+		plist=
+		{
+			UIStatusBarHidden = true,
+			-- Icon image files table
+			CFBundleIconFiles = {
+				"Icon.png",
+				"Icon@2x.png",
+				"Icon-60.png",
+				"Icon-60@2x.png",
+				"Icon-60@3x.png",
+				"Icon-72.png",
+				"Icon-72@2x.png",
+				"Icon-76.png",
+				"Icon-76@2x.png",
+				"Icon-167.png",
+				"Icon-Small-40.png",
+				"Icon-Small-40@2x.png",
+				"Icon-Small-40@3x.png",
+				"Icon-Small-50.png",
+				"Icon-Small-50@2x.png",
+				"Icon-Small.png",
+				"Icon-Small@2x.png",
+				"Icon-Small@3x.png",
+			},
+			-- Launch image files table
+			UILaunchImages = {
+				{  -- iPhone 4 LandscapeLeft
+					["UILaunchImageMinimumOSVersion"] = "7.0",
+					["UILaunchImageName"] = "Default",
+					["UILaunchImageOrientation"] = "LandscapeLeft",
+					["UILaunchImageSize"] = "{320, 480}",
+				},
+				{  -- iPhone 4 LandscapeRight
+					["UILaunchImageMinimumOSVersion"] = "7.0",
+					["UILaunchImageName"] = "Default",
+					["UILaunchImageOrientation"] = "LandscapeRight",
+					["UILaunchImageSize"] = "{320, 480}",
+				},
+				{  -- iPhone 5 LandscapeLeft
+					["UILaunchImageMinimumOSVersion"] = "7.0",
+					["UILaunchImageName"] = "Default-568h",
+					["UILaunchImageOrientation"] = "LandscapeLeft",
+					["UILaunchImageSize"] = "{320, 568}",
+				},
+				{  -- iPhone 5 LandscapeRight
+					["UILaunchImageMinimumOSVersion"] = "7.0",
+					["UILaunchImageName"] = "Default-568h",
+					["UILaunchImageOrientation"] = "LandscapeRight",
+					["UILaunchImageSize"] = "{320, 568}",
+				},
+				{  -- iPad LandscapeLeft
+					["UILaunchImageMinimumOSVersion"] = "7.0",
+					["UILaunchImageName"] = "Default-Landscape",
+					["UILaunchImageOrientation"] = "LandscapeLeft",
+					["UILaunchImageSize"] = "{768, 1024}",
+				},
+				{  -- iPad LandscapeRight
+					["UILaunchImageMinimumOSVersion"] = "7.0",
+					["UILaunchImageName"] = "Default-Landscape",
+					["UILaunchImageOrientation"] = "LandscapeRight",
+					["UILaunchImageSize"] = "{768, 1024}",
+				},
+				{  -- iPhone 6 LandscapeLeft
+					["UILaunchImageMinimumOSVersion"] = "8.0",
+					["UILaunchImageName"] = "Default-667h",
+					["UILaunchImageOrientation"] = "LandscapeLeft",
+					["UILaunchImageSize"] = "{375, 667}",
+				},
+				{  -- iPhone 6 LandscapeRight
+					["UILaunchImageMinimumOSVersion"] = "8.0",
+					["UILaunchImageName"] = "Default-667h",
+					["UILaunchImageOrientation"] = "LandscapeRight",
+					["UILaunchImageSize"] = "{375, 667}",
+				},
+				{  -- iPhone 6 Plus LandscapeLeft
+					["UILaunchImageMinimumOSVersion"] = "8.0",
+					["UILaunchImageName"] = "Default-Landscape-736h",
+					["UILaunchImageOrientation"] = "LandscapeLeft",
+					["UILaunchImageSize"] = "{414, 736}",
+				},
+				{  -- iPhone 6 Plus LandscapeRight
+					["UILaunchImageMinimumOSVersion"] = "8.0",
+					["UILaunchImageName"] = "Default-Landscape-736h",
+					["UILaunchImageOrientation"] = "LandscapeRight",
+					["UILaunchImageSize"] = "{414, 736}",
+				},
+			},
+			UIAppFonts =
+			{
+				"neuropol x free.ttf",  -- Font file name
+			},
+		},
+	},
+
+	excludeFiles =
+	{
+		-- Exclude all files at folder "data"
+		all = { "data/*", "data" },
+
+		-- Exclude all Android icon files and .ogg files in the "music" directory
+		iphone = { "resource/audio/*.ogg" },
+
+		-- Exclude iOS "retina" image files and .m4a files in the "music" directory
+		android = { "resource/audio/*.m4a" },
+
+		-- Exclude unnecessary assets from OS X desktop apps
+		osx = { "resource/audio/*.ogg" },
+
+		-- Exclude unnecessary assets from Win32 desktop apps
+		win32 = { "resource/audio/*.m4a" },
+	},
+}
